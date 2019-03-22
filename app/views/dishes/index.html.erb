@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to new_dish_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Dish
+  <% end %>
+  <h1>Listing dishes</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Menu</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @dishes.each do |dish| %>
+        <%= content_tag :tr, id: dom_id(dish), class: dom_class(dish) do %>
+                      <td><%= dish.name %></td>
+                      <td><%= dish.price %></td>
+                      <td><%= dish.menu_id %></td>
+                    <td><%= link_to 'Show', dish %></td>
+          <td><%= link_to 'Edit', edit_dish_path(dish) %></td>
+          <td><%= link_to 'Destroy', dish, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
