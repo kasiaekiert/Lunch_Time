@@ -4,7 +4,11 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
-    @places = Place.all
+    @places = if params[:search]
+      Place.where('order_time >= ?', Time.now).where('order_time LIKE ?', "%#{params[:search]}%").all
+    else
+      Place.where('order_time >= ?', Time.now).all
+    end
   end
 
   # GET /places/1
@@ -70,6 +74,6 @@ class PlacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.require(:place).permit(:name, :delivery_time, :order_time)
+      params.require(:place).permit(:name, :delivery_time, :order_time, :search)
     end
 end
