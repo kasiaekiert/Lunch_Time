@@ -21,3 +21,4 @@
   <dd><%= @place.order_time %></dd>
 
 </dl>
+    <%= link_to "Add Menu", new_menu_path(place_id: @place.id) %>

@@ -10,7 +10,6 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-            <th>Name</th>
             <th>Place</th>
             <th>Menu date</th>
             <th></th>
@@ -22,7 +21,6 @@
     <tbody>
       <% @menus.each do |menu| %>
         <%= content_tag :tr, id: dom_id(menu), class: dom_class(menu) do %>
-                      <td><%= menu.name %></td>
                       <td><%= menu.place_id %></td>
                       <td><%= menu.menu_date %></td>
                     <td><%= link_to 'Show', menu %></td>

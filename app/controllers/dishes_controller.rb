@@ -14,7 +14,8 @@ class DishesController < ApplicationController
 
   # GET /dishes/new
   def new
-    @dish = Dish.new
+    @dish = Dish.new(menu_id: params[:menu_id])
+
   end
 
   # GET /dishes/1/edit

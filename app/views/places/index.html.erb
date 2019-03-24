@@ -21,6 +21,7 @@
 
     <tbody>
       <% @places.each do |place| %>
+        <%# raise place.inspect %>
         <%= content_tag :tr, id: dom_id(place), class: dom_class(place) do %>
                       <td><%= place.name %></td>
                       <td><%= place.delivery_time %></td>

@@ -15,6 +15,7 @@ class PlacesController < ApplicationController
   # GET /places/new
   def new
     @place = Place.new
+    @menu = Menu.new(place_id: params[:place_id])
   end
 
   # GET /places/1/edit
