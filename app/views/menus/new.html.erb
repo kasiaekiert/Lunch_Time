@@ -1,9 +1,13 @@
-<div class="page-header">
-  <%= link_to menus_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span>
-    Back
-  <% end %>
-  <h1>New menu</h1>
-</div>
+<div class="container">
+<div class="top-margin">
+    <div class="page-header">
+      <%= link_to menus_path, class: 'btn btn-warning' do %>
+        <span class="glyphicon glyphicon-list-alt"></span>
+        Back
+      <% end %>
+      <h1 class="center-text">New menu</h1>
+    </div>
 
-<%= render 'form' %>
+    <%= render 'form' %>
+    </div>
+</div>

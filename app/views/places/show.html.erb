@@ -1,24 +1,43 @@
-<div class="page-header">
-  <%= link_to places_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span>
-    Back
-  <% end %>
-  <%= link_to edit_place_path(@place), class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-pencil"></span>
-    Edit
-  <% end %>
-  <h1>Show place</h1>
+<div class="container top-margin">
+  <div class="page-header">
+    <%= link_to places_path, class: 'btn btn-warning' do %>
+      <span class="glyphicon glyphicon-list-alt"></span>
+      Back
+    <% end %>
+    <%= link_to edit_place_path(@place), class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+      Edit
+    <% end %>
+    <h1 class="center-text">Show place</h1>
+  </div>
+
+  <div class="row">
+      <div class="col-md-3 d-none d-sm-none d-md-block d-lg-block">
+          <%= image_tag("pasta1.jpg", {:class => "pastaimg float-right"}) %><br>
+          <%= image_tag("pasta.jpg", {:class => "pastaimg float-right"}) %><br>
+          <%= image_tag("pasta3.png", {:class => "pastaimg float-right"}) %>
+
+      </div>
+
+
+      <div class="col-md-9 col-sm-12 col-xs-12">
+      <div class="text-showmenu">
+        <dl class="dl-horizontal">
+          <dt>Name:</dt>
+          <dd><%= @place.name %></dd>
+
+          <dt>Delivery time:</dt>
+          <dd><%= @place.delivery_time %></dd>
+
+          <dt>Order time:</dt>
+          <dd><%= @place.order_time %></dd>
+
+        </dl>
+            <%= link_to "Add Menu", new_menu_path(place_id: @place.id) %>
+          </div>
+      </div>
+      
+
+
+  </div>
 </div>
-
-<dl class="dl-horizontal">
-  <dt>Name:</dt>
-  <dd><%= @place.name %></dd>
-
-  <dt>Delivery time:</dt>
-  <dd><%= @place.delivery_time %></dd>
-
-  <dt>Order time:</dt>
-  <dd><%= @place.order_time %></dd>
-
-</dl>
-    <%= link_to "Add Menu", new_menu_path(place_id: @place.id) %>
